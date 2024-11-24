@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Login / Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-toggle">
+            <button id="login-toggle" class="active">Login</button>
+            <button id="register-toggle">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="form">
+            <h2>Login to TaskMaster</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="btn primary-btn">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+
+            <!-- Feedback message for login -->
+            <div id="login-error" class="feedback-error"></div>
+            <div id="login-success" class="feedback-success"></div>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="register-form" class="form hidden">
+            <h2>Create an Account</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="reg-email" placeholder="Email" required>
+            <input type="password" id="reg-password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" class="btn primary-btn">Register</button>
+
+            <!-- Feedback message for registration -->
+            <div id="register-error" class="feedback-error"></div>
+            <div id="register-success" class="feedback-success"></div>
+        </form>
+    </div>
+
+    <script src="form-toggle.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

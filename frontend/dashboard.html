@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="TaskMaster" class="logo">
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active"><i class="fa fa-tasks"></i> All Tasks</a></li>
+            <li><a href="#"><i class="fa fa-user"></i> My Tasks</a></li>
+            <li><a href="#"><i class="fa fa-star"></i> Priority Tasks</a></li>
+            <li><a href="#"><i class="fa fa-clock"></i> Overdue Tasks</a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="user-avatar.png" alt="User Avatar" class="user-avatar">
+            <p class="user-name">User Name</p>
+            <p class="user-email">schedule@yourtask.com</p>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header with Filters and Add Task Button -->
+        <header class="dashboard-header">
+            <div class="header-title">
+                <h1>My Tasks</h1>
+                <p>5 tasks due this week</p>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search tasks..." id="task-search">
+                <button id="add-task-btn" onclick="openAddTaskModal()">+ Add Task</button>
+            </div>
+            <div class="filters">
+                <select id="filter-priority">
+                    <option value="">Filter by Priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <select id="filter-status">
+                    <option value="">Filter by Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                </select>
+                <select id="filter-due">
+                    <option value="">Filter by Due Date</option>
+                    <option value="overdue">Overdue</option>
+                    <option value="this-week">This Week</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Task List Section -->
+        <section class="task-list">
+            <div class="task-card" onclick="openTaskDetailModal()">
+                <h3>Task Title</h3>
+                <p>Deadline: 2024-11-30</p>
+                <div class="priority">Priority: <span class="priority-high">High</span></div>
+                <div class="task-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button onclick="markAsCompleted(1)">Mark as Completed</button>
+                    <button class="delete-btn" onclick="deleteTask(1)">Delete</button>
+                </div>
+            </div>
+            <!-- Additional Task Cards will be rendered dynamically -->
+        </section>
+    </div>
+
+    <!-- Task Detail Modal -->
+    <div id="task-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTaskDetailModal()">&times;</span>
+            <h2>Task Title</h2>
+            <p>Description of the task goes here...</p>
+            <p>Deadline: 2024-11-30</p>
+            <p>Priority: High</p>
+            <button onclick="markAsCompleted()">Mark as Completed</button>
+            <button onclick="deleteTask()">Delete Task</button>
+        </div>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddTaskModal()">&times;</span>
+            <h2>Add New Task</h2>
+            <form>
+                <label for="task-title">Title:</label>
+                <input type="text" id="task-title" name="task-title" required>
+
+                <label for="task-desc">Description:</label>
+                <textarea id="task-desc" name="task-desc"></textarea>
+
+                <label for="task-due">Due Date:</label>
+                <input type="date" id="task-due" name="task-due" required>
+
+                <label for="task-priority">Priority:</label>
+                <select id="task-priority" name="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

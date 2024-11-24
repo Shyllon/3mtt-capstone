@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Toggle Button Styles */
+.form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    background-color: transparent;
+    border: 2px solid #f1c40f; /* Yellow color */
+    border-radius: 25px;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 20px;
+    width: 48%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-toggle button.active {
+    background-color: #f1c40f; /* Yellow background for active state */
+    color: #fff;
+}
+
+.form-toggle button:hover {
+    background-color: #f1c40f; /* Hover effect with yellow background */
+    color: #fff;
+}
+
+/* Form Styles */
+.form {
+    display: block;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f1c40f; /* Yellow focus border */
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f1c40f; /* Yellow button background */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d89e1d; /* Darker yellow on hover */
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Hidden Form Styles */
+.hidden {
+    display: none;
+}
+
+.feedback-error {
+    color: red;
+    margin-top: 10px;
+}
+
+.feedback-success {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .form-toggle button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

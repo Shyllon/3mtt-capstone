@@ -1,0 +1,186 @@
+/* Add some general styling to ensure the sidebar and content area are properly aligned */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    height: 100vh;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo {
+    width: 150px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background-color: #4CAF50; /* Adjusted hover effect */
+}
+
+.sidebar-menu a i {
+    margin-right: 10px;
+}
+
+/* Add the user profile and logout button */
+.user-profile {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logout-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Adjust content area to avoid being hidden under sidebar */
+.main-content {
+    margin-left: 250px; /* Adjusted to leave space for the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Ensure the content area is not hidden */
+    box-sizing: border-box;
+}
+
+/* Header section */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header-search input {
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.header-search button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Task List Section */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.task-card:hover {
+    transform: scale(1.05);
+    z-index: 10; /* Ensures the hover effect doesn't overlap sidebar */
+}
+
+.priority-high {
+    color: red;
+    font-weight: 600;
+}
+
+.task-actions {
+    margin-top: 10px;
+}
+
+.task-actions button {
+    margin-right: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
