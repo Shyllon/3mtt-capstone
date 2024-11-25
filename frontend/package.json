@@ -1,0 +1,31 @@
+{
+  "name": "3mtt-capstone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 3000",
+    "build": "npm-run-all clean build:css build:js copy-html",
+    "clean": "rimraf build",
+    "build:css": "cleancss -o build/styles.min.css styles.css",
+    "build:js": "uglifyjs dashboard.js login.js script.js -o build/app.min.js",
+    "copy-html": "copyfiles ./index.html ./build/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "uglify-js": "^3.19.3"
+  }
+}
