@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();  // Ensure dotenv is configured to load environment variables
+require('dotenv').config();  // This ensure dotenv is configured to load environment variables
 
 const auth = async (req, res, next) => {
     try {

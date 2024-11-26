@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const request = require('supertest'); // Assuming you're using Supertest for API testing
-const app = require('../server'); // Import your app for testing
+const request = require('supertest'); //Supertest for API testing
+const app = require('../server'); // Import app for testing
 
 describe('User Authentication Tests', () => {
     it('should register a new user successfully', async () => {

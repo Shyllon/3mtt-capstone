@@ -21,6 +21,7 @@
     "mongoose": "^8.8.1"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   }

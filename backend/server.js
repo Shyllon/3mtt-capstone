@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const User = require('./models/User'); // Import your User model
+const User = require('./models/user'); // Import the User model
 const app = express();
 
 // Connect to MongoDB using the MONGO_URI from .env
@@ -77,6 +77,8 @@ app.use((req, res) => {
 
 // Start the server only if not in test mode
 if (process.env.NODE_ENV !== 'test') {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  const PORT = process.env.PORT || 5000;  // This ensure that the port is 5000 for Fly.io
+  app.listen(PORT, '0.0.0.0', () => {  
+    console.log(`Server running on port ${PORT}`);
+  });
 }
